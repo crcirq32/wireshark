@@ -1,0 +1,357 @@
+ARP
+Filter	Description
+arp.dst.hw_mac	Filters ARP packets by the destination hardware (MAC) address.
+arp.proto.size	Displays ARP packets based on the size of the protocol address (typically 4 bytes for IPv4).
+arp.dst.proto_ipv4	Filters ARP packets based on the destination IPv4 address.
+arp.proto.type	Filters ARP packets based on the protocol type (e.g., IPv4 is 0x0800).
+arp.hw.size	Displays ARP packets based on the size of the hardware address (typically 6 bytes for MAC addresses).
+arp.src.hw_mac	Filters ARP packets by the source hardware (MAC) address.
+arp.hw.type	Filters ARP packets based on the hardware type (e.g., Ethernet is 1).
+arp.src.proto_ipv4	Filters ARP packets based on the source IPv4 address.
+arp.opcode	Filters ARP packets by operation code (e.g., 1 for ARP request, 2 for ARP reply).
+BGP
+Filter	Description
+bgp.aggregator_as	Filters BGP packets based on the AS number of the route aggregator.
+bgp.aggregator_origin	Filters BGP packets based on the IP address of the route aggregator.
+bgp.as_path	Filters BGP packets based on the AS path attribute (list of AS numbers traversed).
+bgp.cluster_identifier	Filters BGP packets based on the cluster identifier in route reflector setups.
+bgp.cluster_list	Filters BGP packets based on the cluster list (route reflector clusters traversed).
+bgp.community_as	Filters BGP packets based on the AS number in the BGP community attribute.
+bgp.community_value	Filters BGP packets based on the community value (tag applied to routes).
+bgp.local_pref	Filters BGP packets based on the local preference attribute, used for route selection.
+bgp.mp_nlri_tnl_id	Filters BGP packets based on the tunnel identifier in the NLRI (Network Layer Reachability Information).
+bgp.mp_reach_nlri_ipv4_prefix	Filters BGP packets that advertise reachable IPv4 prefixes in MP-BGP (Multiprotocol BGP).
+bgp.mp_unreach_nlri_ipv4_prefix	Filters BGP packets that advertise unreachable IPv4 prefixes in MP-BGP.
+bgp.multi_exit_disc	Filters BGP packets based on the Multi-Exit Discriminator (MED) attribute.
+bgp.next_hop	Filters BGP packets based on the next-hop IP address for the advertised route.
+bgp.nlri_prefix	Filters BGP packets based on the advertised network prefix in the NLRI.
+bgp.origin	Filters BGP packets based on the origin attribute, indicating the origin of the route (IGP, EGP, or incomplete).
+bgp.originator_id	Filters BGP packets based on the originator ID in route reflector setups.
+bgp.type	Filters BGP packets based on the BGP message type (e.g., Open, Update, Notification).
+bgp.withdrawn_prefix	Filters BGP packets based on the withdrawn network prefixes in an Update message.
+Ethernet
+Filter	Description
+eth.addr	Filters packets based on the Ethernet address (can match either source or destination).
+eth.dst	Filters packets based on the destination Ethernet (MAC) address.
+eth.ig	Filters packets based on the individual/group (IG) bit in the destination address.
+eth.len	Filters packets based on the Ethernet frame length (payload size).
+eth.lg	Filters packets based on the local/global (LG) bit in the Ethernet address.
+eth.multicast	Filters packets that are Ethernet multicast (group) frames.
+eth.src	Filters packets based on the source Ethernet (MAC) address.
+eth.trailer	Filters packets based on the trailer portion of the Ethernet frame.
+eth.type	Filters packets based on the Ethernet type field (indicates the upper-layer protocol, e.g., IPv4, ARP).
+Filter Operators
+Operator	Description
+eq or ==	Filters packets where the value of a field is equal to the specified value.
+ne or !=	Filters packets where the value of a field is not equal to the specified value.
+gt or >	Filters packets where the value of a field is greater than the specified value.
+lt or <	Filters packets where the value of a field is less than the specified value.
+ge or >=	Filters packets where the value of a field is greater than or equal to the specified value.
+le or <=	Filters packets where the value of a field is less than or equal to the specified value.
+Filter Logic
+Operator	Description
+and or && (Logical AND)	Filters packets that meet all specified conditions. Both conditions must be true.
+or or || (Logical OR)	Filters packets that meet at least one of the specified conditions. Either can be true.
+xor or ^^ (Logical XOR)	Filters packets where exactly one of the specified conditions is true, but not both.
+not or ! (Logical NOT)	Filters packets that do not meet the specified condition, i.e., inverts the filter condition.
+[n] […] (Substring operator)	Filters specific bytes in a packet, allowing extraction or comparison of a particular byte range.
+Frame Relay
+Filter	Description
+fr.becn	Filters packets with the Backward Explicit Congestion Notification (BECN) bit set.
+fr.chdlctype	Filters packets based on the Frame Relay header Channel Type (CHDLC type).
+fr.control	Filters packets based on the Frame Relay control field.
+fr.control.f	Filters packets based on the Frame Relay control F-bit (final bit).
+fr.control.ftype	Filters packets based on the Frame Relay frame type (I, S, or U frame).
+fr.control.n_r	Filters packets based on the N(R) field, which is the receive sequence number.
+fr.control.n_s	Filters packets based on the N(S) field, which is the send sequence number.
+fr.control.p	Filters packets based on the Frame Relay control P-bit (poll bit).
+fr.control.s_ftype	Filters packets based on the supervisory frame type.
+fr.control.u_modifier_cmd	Filters packets based on the U-frame command modifier.
+fr.control.u_modifier_resp	Filters packets based on the U-frame response modifier.
+fr.cr	Filters packets based on the Frame Relay command/response (C/R) bit.
+fr.dc	Filters packets based on the discard eligibility (DE) congestion control bit.
+fr.de	Filters packets that are marked with the Discard Eligibility (DE) bit.
+fr.dlci	Filters packets based on the Data Link Connection Identifier (DLCI) value.
+fr.dlcore_control	Filters packets based on the core DLCI control field.
+fr.ea	Filters packets based on the extended address (EA) bit.
+fr.fecn	Filters packets with the Forward Explicit Congestion Notification (FECN) bit set.
+fr.lower_dlci	Filters packets based on the lower bits of the DLCI field.
+fr.nlpid	Filters packets based on the Network Layer Protocol Identifier (NLPID).
+fr.second_dlci	Filters packets based on the second DLCI in multi-DLCI frames.
+fr.snap.oui	Filters packets based on the Organizationally Unique Identifier (OUI) in SNAP.
+fr.snap.pid	Filters packets based on the Protocol Identifier (PID) in SNAP headers.
+fr.snaptype	Filters packets based on the SNAP type field (upper-layer protocol).
+fr.third_dlci	Filters packets based on the third DLCI in multi-DLCI frames.
+fr.upper_dlci	Filters packets based on the upper bits of the DLCI field.
+HTTP
+Filter	Description
+http.accept	Filters HTTP packets based on the Accept header, indicating accepted media types.
+http.accept_encoding	Filters HTTP packets based on the Accept-Encoding header, indicating accepted encoding formats.
+http.accept_language	Filters HTTP packets based on the Accept-Language header, indicating preferred languages.
+http.authbasic	Filters HTTP packets containing basic authentication credentials.
+http.authorization	Filters HTTP packets based on the Authorization header, used for user authentication.
+http.cache_control	Filters HTTP packets based on the Cache-Control header, which specifies caching directives.
+http.connection	Filters HTTP packets based on the Connection header, indicating connection control (e.g., keep-alive).
+http.content_encoding	Filters HTTP packets based on the Content-Encoding header, specifying how the body is encoded.
+http.content_length	Filters HTTP packets based on the Content-Length header, indicating the size of the message body.
+http.content_type	Filters HTTP packets based on the Content-Type header, specifying the media type of the body.
+http.cookie	Filters HTTP packets based on the Cookie header, containing client-side data.
+http.date	Filters HTTP packets based on the Date header, indicating the date and time of the message.
+http.host	Filters HTTP packets based on the Host header, specifying the target host of the request.
+http.last_modified	Filters HTTP packets based on the Last-Modified header, indicating the last modification date of the resource.
+http.location	Filters HTTP packets based on the Location header, used in redirects to specify a new URL.
+http.notification	Filters HTTP packets related to server-side notifications.
+http.proxy_authenticate	Filters HTTP packets based on the Proxy-Authenticate header, requesting proxy authentication.
+http.proxy_authorization	Filters HTTP packets based on the Proxy-Authorization header, providing credentials to a proxy.
+http.proxy_connect_host	Filters HTTP packets based on the proxy connection host.
+http.proxy_connect_port	Filters HTTP packets based on the proxy connection port.
+http.referer	Filters HTTP packets based on the Referer header, indicating the URL of the resource that linked to the request.
+http.request	Filters HTTP request packets.
+http.request.method	Filters HTTP packets based on the request method (e.g., GET, POST, PUT).
+http.request.uri	Filters HTTP packets based on the request URI (Uniform Resource Identifier).
+http.request.version	Filters HTTP packets based on the version of the HTTP request (e.g., HTTP/1.1).
+http.response	Filters HTTP response packets.
+http.response.code	Filters HTTP packets based on the response status code (e.g., 200, 404).
+http.server	Filters HTTP packets based on the Server header, indicating server information.
+http.set_cookie	Filters HTTP packets based on the Set-Cookie header, used by the server to set cookies on the client.
+http.transfer_encoding	Filters HTTP packets based on the Transfer-Encoding header, indicating how the message body is transferred.
+http.user_agent	Filters HTTP packets based on the User-Agent header, indicating the client software (e.g., browser).
+http.www_authenticate	Filters HTTP packets based on the WWW-Authenticate header, requesting client authentication.
+http.x_forwarded_for	Filters HTTP packets based on the X-Forwarded-For header, indicating the original client IP address behind a proxy.
+ICMP
+Filter	Description
+icmp.checksum	Filters packets based on the ICMP checksum value, used for error detection.
+icmp.checksum_bad	Filters packets with an incorrect ICMP checksum, indicating potential corruption.
+icmp.code	Filters packets based on the ICMP code, which provides additional information about the message type.
+icmp.ident	Filters packets based on the identifier field, often used to match requests and replies.
+icmp.mtu	Filters packets based on the Maximum Transmission Unit (MTU) value, used in ICMP fragmentation-related messages.
+icmp.redir_gw	Filters packets based on the gateway address in ICMP redirect messages.
+icmp.seq	Filters packets based on the sequence number, used to match ICMP echo requests and replies.
+icmp.type	Filters packets based on the ICMP message type (e.g., Echo Request, Echo Reply, Destination Unreachable).
+ICMPv6
+Filter	Description
+icmpv6.all_comp	Filters all ICMPv6 packets related to mobility, such as binding and home address.
+icmpv6.checksum	Filters packets based on the ICMPv6 checksum, used for error detection.
+icmpv6.checksum_bad	Filters packets with an incorrect ICMPv6 checksum, indicating packet corruption.
+icmpv6.code	Filters packets based on the ICMPv6 code, providing additional information about the message type.
+icmpv6.comp	Filters packets related to mobility (e.g., binding updates and acknowledgments).
+icmpv6.haad.ha_addrs	Filters packets based on the Home Agent (HA) address list in Home Agent Address Discovery.
+icmpv6.identifier	Filters packets based on the ICMPv6 identifier, used to match requests and replies.
+icmpv6.option	Filters packets based on ICMPv6 option fields, found in Neighbor Discovery and Router Advertisement messages.
+icmpv6.option.cga	Filters packets based on the Cryptographically Generated Address (CGA) option.
+icmpv6.option.length	Filters packets based on the length of ICMPv6 options.
+icmpv6.option.name_type	Filters packets based on the type of name option (e.g., Fully Qualified Domain Name).
+icmpv6.option.name_type.fqdn	Filters packets with a Fully Qualified Domain Name (FQDN) name option.
+icmpv6.option.name_x501	Filters packets based on X.501 Distinguished Name in ICMPv6 options.
+icmpv6.option.rsa.key_hash	Filters packets based on the RSA key hash in ICMPv6 Secure Neighbor Discovery (SEND) options.
+icmpv6.option.type	Filters packets based on the type of ICMPv6 option.
+icmpv6.ra.cur_hop_limit	Filters Router Advertisement packets based on the current hop limit field.
+icmpv6.ra.reachable_time	Filters Router Advertisement packets based on the reachable time field, indicating how long a node is reachable.
+icmpv6.ra.retrans_timer	Filters Router Advertisement packets based on the retransmission timer value.
+icmpv6.ra.router_lifetime	Filters Router Advertisement packets based on the router lifetime value.
+icmpv6.recursive_dns_serv	Filters ICMPv6 packets based on Recursive DNS Server options.
+icmpv6.type	Filters packets based on the ICMPv6 message type (e.g., Echo Request, Router Solicitation, Neighbor Advertisement).
+IEEE 802.1Q
+Filter	Description
+vlan.cfi	Filters packets based on the Canonical Format Indicator (CFI) bit, which indicates Ethernet frame format (used in bridging).
+vlan.etype	Filters packets based on the Ethernet type field in the VLAN tag, indicating the upper-layer protocol (e.g., IPv4, ARP).
+vlan.id	Filters packets based on the VLAN Identifier (VID), which specifies the VLAN to which the frame belongs.
+vlan.len	Filters packets based on the length of the VLAN-tagged Ethernet frame.
+vlan.priority	Filters packets based on the Priority Code Point (PCP), which is used for Quality of Service (QoS) to prioritize VLAN traffic.
+vlan.trailer	Filters packets based on the trailer portion of a VLAN-tagged Ethernet frame.
+IPv4
+Filter	Description
+ip.addr	Filters packets based on any IP address (source or destination) present in the packet.
+ip.checksum	Filters packets based on the IP checksum value, used for error detection.
+ip.checksum_bad	Filters packets with an incorrect IP checksum, indicating possible packet corruption.
+ip.checksum_good	Filters packets with a valid IP checksum, confirming integrity.
+ip.dsfield	Filters packets based on the Differentiated Services field, which is used for QoS marking.
+ip.dsfield.ce	Filters packets that have the Congestion Experienced (CE) bit set in the Differentiated Services field.
+ip.dsfield.dscp	Filters packets based on the Differentiated Services Code Point (DSCP) value for traffic prioritization.
+ip.dsfield.ect	Filters packets that have the Explicit Congestion Notification (ECT) bit set.
+ip.dst	Filters packets based on the destination IP address.
+ip.dst_host	Filters packets based on the destination host name.
+ip.flags	Filters packets based on the IP flags field, which indicates control information for fragmentation.
+ip.flags.df	Filters packets with the “Don’t Fragment” (DF) flag set, indicating that fragmentation is not allowed.
+ip.flags.mf	Filters packets with the “More Fragments” (MF) flag set, indicating that more fragments follow.
+ip.flags.rb	Filters packets with the “Reserved” bit set in the IP flags.
+ip.frag_offset	Filters packets based on the fragment offset field, indicating the position of the fragment in the original packet.
+ip.fragment	Filters packets that are fragmented, indicating they are parts of a larger packet.
+ip.fragment.error	Filters packets with errors related to fragmentation.
+ip.fragment.multipletails	Filters packets that have multiple fragment tails, indicating potential fragmentation issues.
+ip.fragment.overlap	Filters packets that have overlapping fragments, which can cause issues in reassembly.
+ip.fragment.overlap.conflict	Filters packets where overlapping fragments conflict with each other during reassembly.
+ip.fragment.toolongfragment	Filters packets that are fragments deemed too long for their original packet structure.
+ip.fragments	Filters packets that are part of fragmented IP packets.
+ip.hdr_len	Filters packets based on the length of the IP header, indicating the size of the header in bytes.
+ip.host	Filters packets based on the host IP address, applicable in certain protocols.
+ip.id	Filters packets based on the IP identification field, used for matching fragments of the same packet.
+ip.len	Filters packets based on the total length of the IP packet, including the header and data.
+ip.proto	Filters packets based on the IP protocol number, indicating the encapsulated protocol (e.g., TCP, UDP).
+ip.reassembled_in	Filters packets that have been reassembled from fragments, showing the reassembly status.
+ip.src	Filters packets based on the source IP address.
+ip.src_host	Filters packets based on the source host name.
+ip.tos	Filters packets based on the Type of Service (ToS) field in the IP header, used for QoS.
+ip.tos.cost	Filters packets based on the cost parameter in the Type of Service field.
+ip.tos.delay	Filters packets based on the delay parameter in the Type of Service field.
+ip.tos.precedence	Filters packets based on the precedence parameter in the Type of Service field.
+ip.tos.reliability	Filters packets based on the reliability parameter in the Type of Service field.
+ip.tos.throughput	Filters packets based on the throughput parameter in the Type of Service field.
+ip.ttl	Filters packets based on the Time to Live (TTL) value, which indicates the packet’s lifespan.
+ip.version	Filters packets based on the IP version (e.g., IPv4 or IPv6) used in the packet.
+IPv6
+Filter	Description
+ipv6.addr	Filters packets based on any IPv6 address (source or destination) present in the packet.
+ipv6.class	Filters packets based on the IPv6 traffic class, which is used for QoS marking.
+ipv6.dst	Filters packets based on the destination IPv6 address.
+ipv6.dst_host	Filters packets based on the destination host name.
+ipv6.dst_opt	Filters packets that include IPv6 destination options in the header.
+ipv6.flow	Filters packets based on the flow label field in the IPv6 header, used for packet classification.
+ipv6.fragment	Filters packets that are fragmented, indicating they are parts of a larger packet.
+ipv6.fragment.error	Filters packets with errors related to fragmentation.
+ipv6.fragment.id	Filters packets based on the fragment identification field, used for matching fragments.
+ipv6.fragment.more	Filters packets with the “More Fragments” flag set, indicating that more fragments follow.
+ipv6.fragment.multipletails	Filters packets that have multiple fragment tails, indicating potential fragmentation issues.
+ipv6.fragment.offset	Filters packets based on the fragment offset field, indicating the position of the fragment in the original packet.
+ipv6.fragment.overlap	Filters packets that have overlapping fragments, which can cause issues in reassembly.
+ipv6.fragment.overlap.conflict	Filters packets where overlapping fragments conflict with each other during reassembly.
+ipv6.fragment.toolongfragment	Filters packets that are fragments deemed too long for their original packet structure.
+ipv6.fragments	Filters packets that are part of fragmented IPv6 packets.
+ipv6.hlim	Filters packets based on the Hop Limit (TTL equivalent) value, indicating the packet’s lifespan.
+ipv6.hop_opt	Filters packets that contain hop-by-hop options in the IPv6 header.
+ipv6.host	Filters packets based on the host IPv6 address, applicable in certain protocols.
+ipv6.mipv6_home_address	Filters packets based on the Mobile IPv6 home address.
+ipv6.mipv6_length	Filters packets based on the length of Mobile IPv6 options.
+ipv6.mipv6_type	Filters packets based on the type of Mobile IPv6 option.
+ipv6.nxt	Filters packets based on the next header field in the IPv6 header, indicating the upper-layer protocol.
+ipv6.opt.pad1	Filters packets that contain a Pad1 option in the IPv6 header.
+ipv6.opt.padn	Filters packets that contain a PadN option in the IPv6 header.
+ipv6.plen	Filters packets based on the payload length field in the IPv6 header.
+ipv6.reassembled_in	Filters packets that have been reassembled from fragments, showing the reassembly status.
+ipv6.routing_hdr	Filters packets that contain a routing header in the IPv6 header.
+ipv6.routing_hdr.addr	Filters packets based on the addresses specified in the IPv6 routing header.
+ipv6.routing_hdr.left	Filters packets based on the number of routing header addresses left to process.
+ipv6.routing_hdr.type	Filters packets based on the type of routing header used in the IPv6 packet.
+ipv6.src	Filters packets based on the source IPv6 address.
+ipv6.src_host	Filters packets based on the source host name.
+ipv6.version	Filters packets based on the IPv6 version field in the header.
+MPLS
+Filter	Description
+mpls.bottom	Filters packets based on the bottom of the stack (BoS) bit, indicating whether the label is the last in the MPLS label stack.
+mpls.cw.control	Filters packets based on the control field of the MPLS Cell Loss Priority (CLP) in the Control Word (CW).
+mpls.cw.res	Filters packets based on the Reserved bits in the MPLS Control Word (CW), which are generally not used.
+mpls.exp	Filters packets based on the Experimental (EXP) bits, which are used for Quality of Service (QoS) marking.
+mpls.label	Filters packets based on the MPLS label value, which is used for forwarding decisions.
+mpls.oam.bip16	Filters packets based on the Bidirectional Maintenance (BIP) 16 value, used for performance monitoring.
+mpls.oam.defect_location	Filters packets based on the location of the defect detected in the MPLS network.
+mpls.oam.defect_type	Filters packets based on the type of defect identified during Operations, Administration, and Maintenance (OAM).
+mpls.oam.frequency	Filters packets based on the frequency of the OAM message transmission for maintenance purposes.
+mpls.oam.function_type	Filters packets based on the type of OAM function being performed, indicating the maintenance task.
+mpls.oam.ttsi	Filters packets based on the Time To Signal (TTSI) interval for OAM operations.
+mpls.ttl	Filters packets based on the Time to Live (TTL) value, which indicates how many hops a packet can take before being discarded.
+PPP
+Filter	Description
+ppp.address	Filters packets based on the address field in the PPP header, typically used for identifying the endpoint.
+ppp.control	Filters packets based on the control field in the PPP header, which is used for various control information.
+ppp.direction	Filters packets based on the direction of the PPP frame, indicating whether it is incoming or outgoing.
+ppp.protocol	Filters packets based on the protocol field in the PPP header, which indicates the encapsulated protocol being used.
+RIP
+Filter	Description
+rip.auth.passwd	Filters packets based on the RIP authentication password, used for securing RIP messages.
+rip.auth.type	Filters packets based on the type of authentication used in RIP, indicating the authentication mechanism.
+rip.command	Filters packets based on the RIP command field, which specifies the type of RIP message (e.g., request or response).
+rip.family	Filters packets based on the address family field, indicating the type of address used (e.g., IPv4).
+rip.ip	Filters packets based on the IP address included in the RIP routing information.
+rip.metric	Filters packets based on the metric value, which indicates the cost of the route in RIP.
+rip.netmask	Filters packets based on the netmask associated with the IP address in the routing information.
+rip.next_hop	Filters packets based on the next-hop IP address specified in the RIP routing update.
+rip.route_tag	Filters packets based on the route tag, used for identifying routes in RIP updates.
+rip.routing_domain	Filters packets based on the routing domain, typically used in multiprotocol environments.
+rip.version	Filters packets based on the version of RIP being used (RIP v1 or RIP v2).
+TCP
+Filter	Description
+tcp.ack	Filters packets that have the ACK (Acknowledgment) flag set, indicating acknowledgment of received data.
+tcp.checksum	Filters packets based on the TCP checksum value, used for error detection.
+tcp.checksum_bad	Filters packets with an incorrect TCP checksum, indicating possible packet corruption.
+tcp.checksum_good	Filters packets with a valid TCP checksum, confirming integrity.
+tcp.continuation_to	Filters packets that are continuation segments, indicating they are part of a multi-segment transmission.
+tcp.dstport	Filters packets based on the destination TCP port number.
+tcp.flags	Filters packets based on the TCP flags field, which contains control bits for the TCP segment.
+tcp.flags.ack	Filters packets where the ACK flag is set, indicating acknowledgment of received segments.
+tcp.flags.cwr	Filters packets with the Congestion Window Reduced (CWR) flag set, used to indicate network congestion handling.
+tcp.flags.ecn	Filters packets with the Explicit Congestion Notification (ECN) flag set, indicating congestion notification.
+tcp.flags.fin	Filters packets where the FIN (Finish) flag is set, indicating the sender has finished sending data.
+tcp.flags.push	Filters packets where the PUSH flag is set, indicating immediate data delivery to the application layer.
+tcp.flags.reset	Filters packets with the RESET (RST) flag set, indicating a connection reset.
+tcp.flags.syn	Filters packets where the SYN (Synchronize) flag is set, used for initiating a TCP connection.
+tcp.flags.urg	Filters packets where the URG (Urgent) flag is set, indicating urgent data is present.
+tcp.hdr_len	Filters packets based on the length of the TCP header, indicating the size of the header in bytes.
+tcp.len	Filters packets based on the length of the TCP segment’s payload.
+tcp.nxtseq	Filters packets based on the next sequence number expected, useful for tracking segment order.
+tcp.options	Filters packets based on the presence of TCP options in the header.
+tcp.options.cc	Filters packets that include the TCP cumulative acknowledgment option.
+tcp.options.ccecho	Filters packets that include the TCP cumulative acknowledgment echo option.
+tcp.options.ccnew	Filters packets that include the TCP new cumulative acknowledgment option.
+tcp.options.echo	Filters packets that include the TCP echo option, used for diagnostics.
+tcp.options.echo_reply	Filters packets that include the TCP echo reply option.
+tcp.options.md5	Filters packets that include the MD5 option for data integrity verification.
+tcp.options.mss	Filters packets that specify the Maximum Segment Size (MSS) option, indicating the largest segment size.
+tcp.options.mss_val	Filters packets based on the value of the Maximum Segment Size (MSS) option.
+tcp.options.qs	Filters packets that include the TCP Quick-Start option for improved bandwidth usage.
+tcp.options.sack	Filters packets that include the Selective Acknowledgment (SACK) option, allowing for more efficient retransmissions.
+tcp.options.sack_le	Filters packets that include the SACK left edge option.
+tcp.options.sack_perm	Filters packets that include the SACK permitted option.
+tcp.options.sack_re	Filters packets that include the SACK re-ordering option.
+tcp.options.time_stamp	Filters packets that include the TCP timestamp option, used for round-trip time measurement.
+tcp.options.wscale	Filters packets that include the TCP Window Scale option for larger window sizes.
+tcp.options.wscale_val	Filters packets based on the value of the TCP Window Scale option.
+tcp.pdu.last_frame	Filters packets based on the last frame of a Protocol Data Unit (PDU).
+tcp.pdu.size	Filters packets based on the size of a Protocol Data Unit (PDU).
+tcp.pdu.time	Filters packets based on the time at which a Protocol Data Unit (PDU) was captured.
+tcp.port	Filters packets based on the TCP port number, applicable for both source and destination ports.
+tcp.reassembled_in	Filters packets that have been reassembled from fragments, showing the reassembly status.
+tcp.segment	Filters packets that are part of TCP segments.
+tcp.segment.error	Filters packets with errors related to TCP segment transmission.
+tcp.segment.multipletails	Filters packets that have multiple TCP segment tails, indicating potential issues.
+tcp.segment.overlap	Filters packets that have overlapping segments, which can cause issues in reassembly.
+tcp.segment.overlap.conflict	Filters packets where overlapping segments conflict with each other during reassembly.
+tcp.segment.toolongfragment	Filters packets that are segments deemed too long for their original packet structure.
+tcp.segments	Filters packets that are part of TCP segments.
+tcp.seq	Filters packets based on the sequence number of the TCP segment, indicating the order of segments.
+tcp.srcport	Filters packets based on the source TCP port number.
+tcp.time_delta	Filters packets based on the time delta between packets, useful for timing analysis.
+tcp.time_relative	Filters packets based on the relative time from the first packet in the capture.
+tcp.urgent_pointer	Filters packets based on the value of the urgent pointer field, indicating urgent data.
+tcp.window_size	Filters packets based on the TCP window size, indicating how much data can be sent before needing an acknowledgment.
+UDP
+Filter	Description
+udp.checksum	Filters packets based on the UDP checksum value, used for error detection in the UDP segment.
+udp.checksum_bad	Filters packets with an incorrect UDP checksum, indicating possible packet corruption.
+udp.checksum_good	Filters packets with a valid UDP checksum, confirming integrity.
+udp.dstport	Filters packets based on the destination UDP port number.
+udp.length	Filters packets based on the length of the UDP segment, including both header and payload.
+udp.port	Filters packets based on the UDP port number, applicable for both source and destination ports.
+udp.srcport	Filters packets based on the source UDP port number.
+VTP
+Filter	Description
+vtp.code	Filters packets based on the VTP message type code, indicating the specific VTP operation.
+vtp.conf_rev_num	Filters packets based on the configuration revision number, which indicates the version of the VTP configuration.
+vtp.followers	Filters packets based on the number of followers (clients) that a VTP server has.
+vtp.md	Filters packets based on the VTP message digest, used for integrity checks of VTP messages.
+vtp.md_len	Filters packets based on the length of the message digest field in VTP messages.
+vtp.md5_digest	Filters packets based on the MD5 digest used for authentication in VTP.
+vtp.seq_num	Filters packets based on the sequence number, used for ordering VTP messages.
+vtp.start_value	Filters packets based on the starting value of the VTP configuration revision number.
+vtp.upd_id	Filters packets based on the update identifier for tracking VTP updates.
+vtp.upd_ts	Filters packets based on the timestamp of the VTP update message.
+vtp.version	Filters packets based on the version of VTP being used (e.g., VTP version 1, 2, or 3).
+vtp.vlan_info.802_10_index	Filters packets based on the 802.10 index for VLAN information within VTP messages.
+vtp.vlan_info.isl_vlan_id	Filters packets based on the Inter-Switch Link (ISL) VLAN ID included in VTP updates.
+vtp.vlan_info.len	Filters packets based on the length of the VLAN information field in VTP messages.
+vtp.vlan_info.mtu_size	Filters packets based on the maximum transmission unit (MTU) size specified for the VLAN.
+vtp.vlan_info.status.vlan_susp	Filters packets based on the VLAN status, indicating whether the VLAN is suspended or active.
+vtp.vlan_info.tlv_len	Filters packets based on the length of the Type-Length-Value (TLV) field in VTP messages.
+vtp.vlan_info.tlv_type	Filters packets based on the type of the TLV field in VTP messages, indicating the kind of information carried.
+vtp.vlan_info.vlan_name	Filters packets based on the name of the VLAN specified in VTP messages.
+vtp.vlan_info.vlan_name_len	Filters packets based on the length of the VLAN name field in VTP messages.
+vtp.vlan_info.vlan_type	Filters packets based on the type of VLAN specified in VTP updates (e.g., static or dynamic).
